@@ -39,8 +39,8 @@ venv.bak/
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# Data files
-data/
+# Data files (but not the fx_predict/data module)
+/data/
 *.csv
 *.h5
 *.pkl
