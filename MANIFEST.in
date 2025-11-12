@@ -1,0 +1,7 @@
+include README.md
+include LICENSE
+include requirements.txt
+include ARCHITECTURE.md
+recursive-include tsgcn *.py
+recursive-include examples *.py
+recursive-include tests *.py
