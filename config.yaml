@@ -1,0 +1,21 @@
+model:
+  num_nodes: 7  # Number of currencies (e.g., USD, EUR, GBP, JPY, AUD, CAD, CHF)
+  num_features: 4  # OHLC (Open, High, Low, Close)
+  temporal_channels: [64, 64]
+  spatial_channels: [64, 32]
+  seq_len: 10  # Look back 10 time steps
+  pred_len: 1  # Predict 1 step ahead
+  kernel_size: 3
+  dropout: 0.2
+
+training:
+  batch_size: 32
+  epochs: 100
+  learning_rate: 0.001
+  weight_decay: 0.00001
+  early_stopping_patience: 10
+  train_ratio: 0.8
+
+data:
+  graph_method: 'fully_connected'  # Options: 'fully_connected', 'correlation', 'identity'
+  correlation_threshold: 0.5
