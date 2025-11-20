@@ -1,0 +1,122 @@
+{
+  "bytes": 7363680,
+  "count_of_rows": 245082,
+  "hash": "f044d7d67f71d60939a86229afca2c71",
+  "homepage": "https://fred.stlouisfed.org",
+  "licenses": [
+    {
+      "id": "odc-pddl",
+      "name": "public_domain_dedication_and_license",
+      "url": "http://opendatacommons.org/licenses/pddl/1.0/",
+      "version": "1.0"
+    }
+  ],
+  "name": "us-euro-foreign-exchange-rate",
+  "profile": "data-package",
+  "readme": "Foreign exchange rates from US Federal Reserve in daily, monthly and yearly basis.\n\n## Data\n\nData is gathered from [https://fred.stlouisfed.org](https://fred.stlouisfed.org).\nMost of the countries have rates for days, months and years, but some only have for months. \nSome countries have inverted values. Most are compared to USD, and some are USD compared to them.\n\nFollowing country currencies have `USD/currency` ratio:\n\n* Austalia\n* Euro\n* Ireland\n* New Zealand\n* United Kingdom\n\nThe rest of countries have `currency/USD` ratio.\n\nIn this dataset, there are 3 granularities available:\n\n* daily\n* monthly\n* yearly\n\nThe data has following fields:\n\n* Date - date in ISO format\n* Country - name of a country\n* Value - currency rate\n\n## Preparation\n\nRun python script:\n```\nscripts/main.py\n```\n\n## License\n\nLicensed under the [Public Domain Dedication and License][pddl] (assuming\neither no rights or public domain license in source data).\n\n[pddl]: http://opendatacommons.org/licenses/pddl/1.0/",
+  "resources": [
+    {
+      "dpp:streaming": true,
+      "name": "daily",
+      "path": "data/daily.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "description": "Date in ISO format",
+            "format": "default",
+            "name": "Date",
+            "type": "date"
+          },
+          {
+            "description": "Name of a country",
+            "format": "default",
+            "name": "Country",
+            "type": "string"
+          },
+          {
+            "description": "Foreign Exchange Rate to USD. Only AUD, IEP, NZD, GBP and EUR to USD.",
+            "format": "default",
+            "name": "Exchange rate",
+            "type": "number"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    },
+    {
+      "dpp:streaming": true,
+      "name": "monthly",
+      "path": "data/monthly.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "description": "Date in ISO format",
+            "format": "default",
+            "name": "Date",
+            "type": "date"
+          },
+          {
+            "description": "Name of a country",
+            "format": "default",
+            "name": "Country",
+            "type": "string"
+          },
+          {
+            "description": "Foreign Exchange Rate to USD. Only AUD, IEP, NZD, GBP and EUR to USD.",
+            "format": "default",
+            "name": "Exchange rate",
+            "type": "number"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    },
+    {
+      "dpp:streaming": true,
+      "name": "annual",
+      "path": "data/annual.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "description": "Date in ISO format",
+            "format": "default",
+            "name": "Date",
+            "type": "date"
+          },
+          {
+            "description": "Name of a country",
+            "format": "default",
+            "name": "Country",
+            "type": "string"
+          },
+          {
+            "description": "Foreign Exchange Rate to USD. Only AUD, IEP, NZD, GBP and EUR to USD.",
+            "format": "default",
+            "name": "Exchange rate",
+            "type": "number"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    }
+  ],
+  "sources": [
+    {
+      "name": "federal-reserve-bank-st-louis",
+      "path": "https://fred.stlouisfed.org/categories/158",
+      "title": "Federal Reserve Bank of St. Louis"
+    }
+  ],
+  "title": "USA / EUR Foreign Exchange Rate since 1999",
+  "version": "0.2.0",
+  "collection": "economic-data"
+}
