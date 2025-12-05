@@ -14,7 +14,7 @@ class Config:
     # Training Parameters
     BATCH_SIZE = 16
     LEARNING_RATE = 0.001
-    EPOCHS = 100
+    EPOCHS = 200
     TRAIN_SPLIT = 0.8
     
     # Hardware

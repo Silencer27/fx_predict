@@ -35,7 +35,7 @@ class GATLayer(nn.Module):
         # 1. Linear Transformation
         # Flatten Batch and Time to process all snapshots in parallel
         # h_flat: (B*T, N, F_in)
-        h_flat = h.view(-1, N, F_in) 
+        h_flat = h.reshape(-1, N, F_in) 
         Wh = self.W(h_flat) # (B*T, N, Out_Dim)
         
         # 2. Prepare Attention Mechanism
